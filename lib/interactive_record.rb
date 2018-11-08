@@ -51,7 +51,7 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT * FROM #{table_name} WHERE name = ? LIMIT 1
     SQL
-    DB[:con].execute(sql,name)
+    DB[:conn].execute(sql,name)
   end
 
 end
