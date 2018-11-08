@@ -30,9 +30,7 @@ class InteractiveRecord
 
   def col_names_for_insert
     insert = []
-    self.class.column_names.map do |row|
-      row if send(row) != nil
-    end.compact.join(", ")
+    self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
 end
