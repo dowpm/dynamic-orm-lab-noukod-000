@@ -28,4 +28,11 @@ class InteractiveRecord
     self.class.table_name
   end
 
+  def col_names_for_insert
+    insert = []
+    self.class.column_names.map do |row|
+      row while !row.empty
+    end.compact.join(", ")
+  end
+
 end
